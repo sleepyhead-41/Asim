@@ -9,10 +9,10 @@ body {
   font-weight: 400;
   font-style: normal;
 
-  background-image: url("./files/universe.jpg");
+  background-image: url("./files/galaxy.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100vw;
+  background-attachment: fixed;
   height: 100vh;
 
   overflow-x: hidden;
@@ -42,8 +42,40 @@ body {
   color: #fff;
 }
 
-.at {
-  color: #dbb91e;
+.developer {
+  color: #0caceb;
+}
+
+.hero div button {
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  border: 2px solid #f30f0f;
+  cursor: pointer;
+
+  transition: background-color 0.2s linear, color 0.2s linear;
+
+  background-color: #f30f0f;
+  color: #fff;
+
+  animation: scale-btn 2s linear infinite;
+}
+
+.hero div button:hover {
+  background-color: #fff;
+  color: #f30f0f;
+}
+
+@keyframes scale-btn {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* social links */
@@ -53,22 +85,16 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
   position: fixed;
-  top: 0;
+  top: 50%;
+  transform: translateY(-50%);
   right: 0;
 
   width: 5rem;
-  height: 100vh;
-
-  background: #d8d6d6;
-
+  height: fit-content;
   opacity: 0;
-  transition: opacity 0.5s linear;
-}
-
-.social-links:hover {
-  opacity: 1;
+  transition: opacity 0.2s linear, transform 0.2s linear;
 }
 
 .social-links img {
@@ -89,23 +115,27 @@ body {
 /* projects */
 
 .projects {
-  background-color: #ffffff;
-  /* width: 100%; */
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  width: 100%;
   padding: 2rem;
+  background-image: url("./files/gradient.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .projects h2 {
   font-size: 3rem;
   text-align: center;
-  color: #0cce49;
+  color: #fff;
 }
 
 .projects .projects-text {
   text-align: center;
-  margin-top: 1rem;
+  padding: 0.5rem;
+  margin: 1rem;
   font-size: 1.2rem;
+  color: #e6e1e1;
 }
 
 .projects .projects-container {
@@ -133,6 +163,11 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
+.projects .project-card h3 {
+  font-size: 1.5rem;
+  color: #f30f0f;
+}
+
 .projects .project-card img {
   width: 100%;
   height: 100%;
@@ -141,6 +176,8 @@ body {
 .projects .project-card p {
   text-align: center;
   padding: 15px;
+  padding-top: 0;
+  color: #d8d4d4;
 }
 
 .projects .project-card:hover {
@@ -150,55 +187,36 @@ body {
 
 /* projects ends */
 
-/* time table */
-.timetable {
-  background-color: #918686;
-  width: 100%;
-  height: 100vh;
-  width: 100vw;
-  padding: 2rem;
+/* media queries  */
+
+@media screen and (max-width: 768px) {
+  .social-links {
+    display: none;
+  }
 }
 
-.timetable h2 {
-  font-size: 3rem;
-  text-align: center;
-  color: #0a0a09;
+@media screen and (max-width: 1024px) {
+  .projects .projects-container {
+    justify-content: center;
+  }
 }
 
-.timetable .timetable-text {
-  text-align: center;
-  margin-top: 1rem;
-  font-size: 1.2rem;
+@media screen and (max-width: 768px) {
+  .hero div h1 {
+    font-size: 4rem;
+  }
+  .hero div p {
+    font-size: 1.5rem;
+  }
 }
 
-table {
-  margin: 0 auto;
-  margin-top: 1rem;
-  width: 80%;
-  border-collapse: collapse;
-  text-align: center;
+@media screen and (max-width: 425px) {
+  .hero div h1 {
+    font-size: 3rem;
+  }
+  .hero div p {
+    font-size: 1.2rem;
+  }
 }
 
-th,
-td {
-  padding: 15px;
-  border: 1px solid #ddd;
-}
-
-th {
-  background-color: #333;
-  color: #fff;
-}
-
-td {
-  background-color: #f9f9f9;
-}
-
-tr:nth-child(even) td {
-  background-color: #f1f1f1;
-}
-
-td:hover {
-  background-color: #e2e2e2;
-}
-/* time table ends */
+/* media queries ends */
