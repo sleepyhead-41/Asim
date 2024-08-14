@@ -73,3 +73,9 @@ git branch
 ```sh
 git checkout -b <branch name>
 ```
+
+# Submit your project
+
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{"githubLink":"https://github.com/baijanathTharu", "name": "Baijanath Tharu"}' https://nhc-submissions.onrender.com/submit/h1
+```
